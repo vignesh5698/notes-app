@@ -21,19 +21,19 @@ app.post('/create', (req, res) => {
     let notesName = req.body.notesName;
     let notesContent = req.body.notesContent;
     if (!fs.existsSync(`posts/${notesName}`)) {
-        fs.writeFileSync(`posts/${notesName}`, notesContent);
+        fs.writeFileSync(`posts/${notesName}.txt`, notesContent);
         res.send('Notes saved...');
     } else {
         res.send('Notes already exist. Try it with another name.')
     }
-    // res.redirect('/')
 })
 
 app.get('/view', (req, res) => {
-    res.sendFile(path.join(__dirname,'/public','view.html'));
+    fs.readdir(path.join(__dirname,'/posts'), (err, files) => {
+        if(err) {
+            console.log(err)
+        }
+        res.send(files)
+        console.log('files : ', files)
+    });
 })
-
-// const msg = notes();
-// fs.writeFileSync('notes.txt', 'File is created.');
-// fs.appendFileSync('notes.txt', '  This text is appended in notes.txt. ');
-// fs.appendFileSync('notes.txt', msg);
