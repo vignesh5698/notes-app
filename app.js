@@ -3,10 +3,11 @@ const fs = require('fs');
 const path=require('path');
 const app = express();
 const  bodyParser=require("body-parser");
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-app.listen(3000, () => console.log('Server running at 3000...'));
+app.listen(port, () => console.log(`Server running at ${port}...`));
 app.use(express.static(path.join(__dirname,'public')))
 
 app.get('/', (req, res) => {
