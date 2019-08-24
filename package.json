@@ -1,0 +1,29 @@
+{
+  "name": "notes-app",
+  "version": "1.0.0",
+  "description": "Notes application using Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vignesh5698/notes-app.git"
+  },
+  "keywords": [
+    "notes-app"
+  ],
+  "author": "Vignesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vignesh5698/notes-app/issues"
+  },
+  "homepage": "https://github.com/vignesh5698/notes-app#readme",
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
